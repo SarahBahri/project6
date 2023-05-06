@@ -1,0 +1,66 @@
+.card-body {
+  text-align: center;
+  border-color: #ffc3a1;
+}
+.days {
+  border: solid 1px salmon;
+  border-radius: 36%;
+  font-family: "Lora", serif;
+  font-weight: bolder;
+  background-color: #fad8fb;
+}
+.ahvaz {
+  border: solid 1px #820000;
+  border-radius: 30%;
+  margin: 12px;
+  padding: 10px;
+  font-family: "PT Mono", monospace;
+  font-weight: bolder;
+  font-size: 18px;
+  background-color: #ffcab0;
+}
+form {
+  text-align: left;
+  padding: 17px;
+  font-weight: bolder;
+}
+.div-total {
+  border: solid 1px salmon;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.location {
+  background-color: #f0ab8d;
+  border: solid 1px #820000;
+  border-radius: 14%;
+  margin: 5px;
+  padding: 12px;
+  font-family: "Lora", serif;
+}
+.city {
+  background-color: #f0ab8d;
+  border: solid 1px #820000;
+  border-radius: 14%;
+  margin: 5px;
+  padding: 12px;
+  font-family: "Lora", serif;
+}
+.search {
+  background-color: #f0ab8d;
+  border: solid 1px #820000;
+  border-radius: 14%;
+  margin: 5px;
+  padding: 12px;
+  font-family: "Lora", serif;
+}
+.cloud {
+  font-size: 55px;
+}
+.sun {
+  font-size: 30px;
+}
+h4 {
+  font-size: 22px;
+  font-weight: bolder;
+}
