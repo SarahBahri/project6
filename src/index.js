@@ -1,59 +1,62 @@
-let weather = {
-  paris: {
-    temp: 19.7,
-    humidity: 80,
-  },
-  tokyo: {
-    temp: 17.3,
-    humidity: 50,
-  },
-  lisbon: {
-    temp: 30.2,
-    humidity: 20,
-  },
-  "san francisco": {
-    temp: 20.9,
-    humidity: 100,
-  },
-  oslo: {
-    temp: -5,
-    humidity: 20,
-  },
-};
-
-let city = prompt("Enter a city");
-if (weather[city] !== undefined) {
-  let temper = weather[city].temp;
-  let hmd = weather[city].humidity;
-  let celsius = Math.round(temper);
-  let fahrenheit = Math.round((temper * 9) / 5 + 32);
-  alert(
-    `It is currently ${celsius}°C (${fahrenheit}°F) in ${city} with a humidity of ${hmd}%`
-  );
-} else {
-  alert(
-    `Sorry we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
-  );
-}
 function cityTemperature(response) {
-  let temp = Math.round(response.data.main.temp);
-  let cityTemp = document.querySelector("#current-tmp");
-  cityTemp.innerHTML = `${temp}°C`;
+  let cityTemp = document.querySelector("#temperature");
+  let h4 = document.querySelector("#h4");
+  h4.innerHTML = response.data.name;
+  let ahvazCity = document.querySelector("#ahvaz-city");
+  ahvazCity.innerHTML = response.data.name;
+  cityTemp.innerHTML = Math.round(response.data.main.temp);
+  let cityWind = document.querySelector("#wind");
+  cityWind.innerHTML = Math.round(response.data.wind.speed);
   let cityDescription = document.querySelector("#clouds");
   cityDescription.innerHTML = response.data.weather[0].description;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
-function searchCity(event) {
-  event.preventDefault();
-  let currentCity = document.querySelector("#current-city");
-  let h4 = document.querySelector("#h4");
-  h4.innerHTML = `${currentCity.value}`;
-  let ahvazCity = document.querySelector("#ahvaz-city");
-  ahvazCity.innerHTML = `${currentCity.value}`;
-  let findCity = `${currentCity.value}`;
+function searchCity(city) {
   let key = "4ec321d0e3a18eeb073109b47e07ef28";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${findCity}&appid=${key}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
 
   axios.get(apiUrl).then(cityTemperature);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#current-city");
+  searchCity(cityInputElement.value);
+}
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#form-city");
-form.addEventListener("submit", searchCity);
+form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+searchCity("Ahwaz");

@@ -36,116 +36,145 @@
         <div class="card">
           <div class="card-body">
             <form id="form-city">
-              <span class="location">
-                <input type="submit" value="current location" class="btn" />
-              </span>
-              <span class="search">
-                <input type="submit" value="🔎" class="btn" />
-              </span>
-              <span class="city">
-                <input
-                  type="text"
-                  name="city"
-                  placeholder="Enter your city name"
-                  class="btn"
-                  id="current-city"
-                />
-              </span>
+              <div class="row">
+                <div class="location col-2">
+                  <input type="submit" value="current location" class="btn" />
+                </div>
+                <div class="search col-1">
+                  <input type="submit" value="🔎" class="btn" />
+                </div>
+                <div class="city col-8">
+                  <input
+                    type="text"
+                    name="city"
+                    placeholder="Enter your city name"
+                    class="btn"
+                    id="current-city"
+                  />
+                </div>
+              </div>
             </form>
-            <div class="card-body">
-              <div class="ahvaz">
-                <h4 class="card-title" id="h4">AHWAZ</h4>
-                <p class="card-text" id="today">
-                  Today the weather in <span id="ahvaz-city">Ahwaz</span> is
-                  <br />
-                </p>
-                <div class="cloud" id="day">☁</div>
-                <div id="clouds">Cloudy</div>
-                <div id="current-tmp">11°C/21°C</div>
-              </div>
-            </div>
             <div class="row">
-              <div class="col">
-                <div class="days">
-                  <div class="card-body">
-                    <h5 class="card-title">Fri</h5>
-                    <p class="card-text">
-                      <span class="sun"> 🌥 </span>
-                      <br />
-                      Partly cloudy
-                      <br />
-                      14°C/27°C
-                    </p>
+              <div class="card-body">
+                <div class="ahvaz">
+                  <h4 class="card-title" id="h4">AHWAZ</h4>
+                  <p class="card-text" id="today">
+                    Today the weather in <span id="ahvaz-city">Ahwaz</span> is
+                    <br />
+                  </p>
+                  <div class="cloud" id="day">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      id="icon"
+                      class="cloud-1"
+                    />
+                  </div>
+                  <div id="clouds">Cloudy</div>
+                  <div class="row">
+                    <div class="col-6">Temperature</div>
+                    <div class="col-6">Wind Speed</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <strong id="temperature">19</strong>
+                      <span class="units"
+                        ><a href="#" id="celsius-link">°C</a>|<a
+                          href="#"
+                          class="faren"
+                          id="fahrenheit-link"
+                          >°F</a
+                        ></span
+                      >
+                    </div>
+                    <div class="col-6" id="current-wind">
+                      <strong id="wind">18</strong> km/h
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="days">
-                  <div class="card-body">
-                    <h5 class="card-title">Sat</h5>
-                    <p class="card-text">
-                      <span class="sun"> 🌞 </span>
-                      <br />
-                      Sunny
-                      <br />
-                      18°C/29°C
-                    </p>
+              <div class="row">
+                <div class="col">
+                  <div class="days">
+                    <div class="card-body">
+                      <h5 class="card-title">Fri</h5>
+                      <p class="card-text">
+                        <span class="sun"> 🌥 </span>
+                        <br />
+                        Partly cloudy
+                        <br />
+                        14°C/27°C
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col">
-                <div class="days">
-                  <div class="card-body">
-                    <h5 class="card-title">Sun</h5>
-                    <p class="card-text">
-                      <span class="sun"> 🌧 </span>
-                      <br />
-                      Rainy
-                      <br />
-                      17°C/25°C
-                    </p>
+                <div class="col">
+                  <div class="days">
+                    <div class="card-body">
+                      <h5 class="card-title">Sat</h5>
+                      <p class="card-text">
+                        <span class="sun"> 🌞 </span>
+                        <br />
+                        Sunny
+                        <br />
+                        18°C/29°C
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col">
-                <div class="days">
-                  <div class="card-body">
-                    <h5 class="card-title">Mon</h5>
-                    <p class="card-text">
-                      <span class="sun"> ⛈ </span>
-                      <br />
-                      Rainy
-                      <br />
-                      16°C/24°C
-                    </p>
+                <div class="col">
+                  <div class="days">
+                    <div class="card-body">
+                      <h5 class="card-title">Sun</h5>
+                      <p class="card-text">
+                        <span class="sun"> 🌧 </span>
+                        <br />
+                        Rainy
+                        <br />
+                        17°C/25°C
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col">
-                <div class="days">
-                  <div class="card-body">
-                    <h5 class="card-title">Tue</h5>
-                    <p class="card-text">
-                      <span class="sun"> 🌥 </span>
-                      <br />
-                      Humid
-                      <br />
-                      15°C/24°C
-                    </p>
+                <div class="col">
+                  <div class="days">
+                    <div class="card-body">
+                      <h5 class="card-title">Mon</h5>
+                      <p class="card-text">
+                        <span class="sun"> ⛈ </span>
+                        <br />
+                        Rainy
+                        <br />
+                        16°C/24°C
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col">
-                <div class="days">
-                  <div class="card-body">
-                    <h5 class="card-title">Wed</h5>
-                    <p class="card-text">
-                      <span class="sun"> 🌞 </span>
-                      <br />
-                      Sunny
-                      <br />
-                      13°C/24°C
-                    </p>
+                <div class="col">
+                  <div class="days">
+                    <div class="card-body">
+                      <h5 class="card-title">Tue</h5>
+                      <p class="card-text">
+                        <span class="sun"> 🌥 </span>
+                        <br />
+                        Humid
+                        <br />
+                        15°C/24°C
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="days">
+                    <div class="card-body">
+                      <h5 class="card-title">Wed</h5>
+                      <p class="card-text">
+                        <span class="sun"> 🌞 </span>
+                        <br />
+                        Sunny
+                        <br />
+                        13°C/24°C
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
