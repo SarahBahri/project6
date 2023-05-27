@@ -64,3 +64,6 @@ h4 {
   font-size: 22px;
   font-weight: bolder;
 }
+.weather-forecast-temperature-min {
+  opacity: 0.8;
+}
