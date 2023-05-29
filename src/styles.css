@@ -30,14 +30,6 @@ form {
   margin: 0 auto;
   margin-top: 50px;
 }
-.location {
-  background-color: #f0ab8d;
-  border: solid 1px #820000;
-  border-radius: 14%;
-  margin: 5px;
-  padding: 12px;
-  font-family: "Lora", serif;
-}
 .city {
   background-color: #f0ab8d;
   border: solid 1px #820000;
